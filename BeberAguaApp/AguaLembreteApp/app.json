@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "scheme" : "agualembrete",
+    "name": "AguaLembrete",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash":{
+      "image":"./assets/splash-icon.png"
+    },
+    "extra":{
+      "equipe":[
+        "Desenvolvedor: Suellen",
+        "Designer: Suellen",
+        "Suporte: Suellen"
+      ]
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/icon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color" : "#ffffff",
+          "defaultChannel": "default",
+          "enableBackgroundRemoteNotifications": false
+        }
+      ]
+    ]
+  }
+}
