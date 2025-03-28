@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     },
     limparButton: {
       backgroundColor: "#FF5252",
-      borderRadius: 10,
+      borderRadius: 20,
       padding: 12,
       marginBottom: 20,
       alignItems: "center",

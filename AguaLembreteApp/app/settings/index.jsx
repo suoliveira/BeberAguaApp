@@ -121,7 +121,7 @@ export default function SettingsScreen() {
         </View>
         <View style={styles.sliderContainer}>
             <Text style={[styles.label, { color: theme.secondaryText} ]} >Digite sua meta diária</Text>
-          <TextInput style={styles.input} value={meta} onChangeText={setMeta} placeholder=""></TextInput>
+          <TextInput style={[styles.input, { color: theme.secondaryText}]} value={meta} onChangeText={setMeta} placeholder=""></TextInput>
         </View>
       </View>
     </View>

@@ -1,5 +1,5 @@
 import React, {useState, useCallback, useEffect} from "react";
-import { StyleSheet, View, Text, Button} from "react-native";
+import { StyleSheet, View, Text, Button, TouchableOpacity} from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useTheme } from "../utils/ThemeContext";
 import { useFocusEffect } from "expo-router";
@@ -66,7 +66,11 @@ export default function AguaContador({ copos, setCopos }) {
           <Text style={[styles.counterText, { color: theme.primaryDark }]}>
             Copos Hoje
           </Text>
-          <Button title="Bebi um copo!" onPress={adicionar} color={theme.primary} />
+          <TouchableOpacity onPress={adicionar} style={styles.add} >
+            <Text style={styles.textStyle}>
+              Bebi um copo
+            </Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.cardFooter}>
           <Text style={styles.counter}>{copos}/{meta} 💧</Text>
@@ -82,6 +86,7 @@ const styles = StyleSheet.create({
       padding: 20,
       alignItems: "center",
       justifyContent: "space-between",
+      borderRadius: 20,
     },
     cardContent: {
       flexDirection: "column",
@@ -97,4 +102,16 @@ const styles = StyleSheet.create({
       fontSize: 24,
       fontWeight: "600",
     },
+    textStyle: {
+      color: 'white',
+      fontWeight: 'bold',
+      textAlign: 'center',
+    },
+    add: {
+      backgroundColor: "#4169E1",
+      padding: 10,
+      borderRadius: 20,
+      alignItems: "center",
+    },
+
 });

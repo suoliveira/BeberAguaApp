@@ -60,8 +60,12 @@ export default function HomeScreen() {
 
   return (
     <View style={[styles.container, { backgroundColor: theme.background }]}>
-      <Text style={[styles.title, { color: theme.primaryDark }]}>
-        Lembrete de Água
+      <View style={styles.line}> 
+        <Text style={[styles.title, { color: theme.primaryDark }]}>Lembrete de Água </Text>
+        <TouchableOpacity style={styles.help} onPress={() => setModalVisible(true)}> 
+          <MaterialIcons name="help" size={27} color="#6495ED"></MaterialIcons>
+        </TouchableOpacity>
+      </View>
       <View> 
       <Modal
           animationType="slide"
@@ -82,14 +86,10 @@ export default function HomeScreen() {
             </View>
           </View>
         </Modal>
-        <TouchableOpacity style={styles.button} onPress={() => setModalVisible(true)}> 
-          <MaterialIcons name="help" size={35} color="#6495ED"></MaterialIcons>
-        </TouchableOpacity>
       </View>
-      </Text>
       <AguaContador copos={copos} setCopos={setCopos} />
       <TouchableOpacity style={[styles.button, styles.resetButton]} onPress={resetarCopos}>
-        <Text style={styles.textStyle}>Resetar contagem</Text>
+        <Text style={styles.textStyle}>Resetar contagem diária</Text>
       </TouchableOpacity>
     </View>
   );
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
   },
   title: {
-    fontSize: 32,
+    fontSize: 30,
     fontWeight: "bold",
     textAlign: "center",
     marginTop: 10,
@@ -153,4 +153,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 20,
   },
+  line:{
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
 });
